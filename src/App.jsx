@@ -1,21 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import RequireAuth from "./middleware/RequireAuth";
 import ItemManagement from "./pages/ItemManagement";
-import Login from "./components/Login";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-
-      <Route
-        path="/items"
-        element={
-          <RequireAuth>
-            <ItemManagement />
-          </RequireAuth>
-        }
-      />
+      <Route path="/items" element={<ItemManagement />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
